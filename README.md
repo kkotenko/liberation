@@ -1,6 +1,6 @@
 # Liberation Backend
 
-The sole purpose of this software is to be used by the RPG Librarium Aachen e.V. Anybody who wants to use this software may under the given licenses, but there will be no support whatsoever and not promises are made to the public regarding stability and availability of this project. 
+The sole purpose of this software is to be used by the RPG Librarium Aachen e.V. Anybody who wants to use this software may under the given licenses, but there will be no support whatsoever and no promises are made to the public regarding stability and availability of this project. 
 
 ## Development setup
 Dependencies (Ubuntu):
@@ -36,12 +36,15 @@ cargo run -p liberation -- -d mysql://liberation:liberation@127.0.0.1:3306/liber
 ## A short introduction to access control
 ### Definitions
 A `client` is an application accessing resources (e.g. web frontend, Android app).
+
 A `subject` is the authenticated entity ob behalf a client is acting (e.g. the user).
+
 A `scope` is a subset of privileges available to a user (e.g. see account information, see collection, lend books from inventory).
+
 The client can request certain scopes and (if they are available to the user) the user can delegate them the client.
 
-In Liberation the access control is partially handled through scopes and partially done on application level. Scopes
-control which subset privileges the user provides to the client. 
+In Liberation the access control is partially handled through scopes and partially done on application level. 
+Scopes control which subset privileges the user provides to the client. 
 
 ### Scopes
 Liberation requires scopes for certain actions. The client can request those scopes for a user.
